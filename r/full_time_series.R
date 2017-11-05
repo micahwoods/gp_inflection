@@ -130,3 +130,5 @@ p + background_grid(major = "xy") +
   geom_line(colour = "#e41a1c", alpha = 0.2) +
   geom_line(aes(x = trickyDate, y = c3gp(temperature), group = year),
             colour = "#377eb8", alpha = 0.2) 
+
+
