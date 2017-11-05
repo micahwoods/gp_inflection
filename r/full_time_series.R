@@ -118,17 +118,9 @@ p <- ggplot(data = cleaned, aes(x = trickyDate, y = c4gp(temperature), group = y
 p + background_grid(major = "xy") +
   geom_line(colour = "#e41a1c", alpha = 0.2) +
   geom_line(aes(x = trickyDate, y = c3gp(temperature), group = year),
-            colour = "#377eb8", alpha = 0.2)
-
-average_gp <- cleaned %>%
-group_by(trickyDate) %>%
-  summarise(gp4_average = mean(c4gp(temperature)),
-            gp3_average = mean(c3gp(temperature)))
-
-p <- ggplot(data = cleaned, aes(x = trickyDate, y = c4gp(temperature), group = year))
-p + background_grid(major = "xy") +
-  geom_line(colour = "#e41a1c", alpha = 0.2) +
-  geom_line(aes(x = trickyDate, y = c3gp(temperature), group = year),
-            colour = "#377eb8", alpha = 0.2) 
-
-
+            colour = "#377eb8", alpha = 0.2) +
+  labs(x = "Date",
+       y = "GP (blue is cool-season, red is warm-season)",
+       title = "Growth potential in Palm Springs, California, 1922 to 2016",
+       subtitle = "years with missing data omitted",
+       caption = "data from https://www.ncdc.noaa.gov/cdo-web/")

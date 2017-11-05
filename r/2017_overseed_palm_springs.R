@@ -23,7 +23,7 @@ c4gp <- function(x) {
   return(GP)
 }
 
-palm <- read.csv("~/Documents/Rs/98-17_palm_springs.csv",
+palm <- read.csv("data/98-17_palm_springs.csv",
                 header = TRUE)
 
 levels(palm$NAME)
